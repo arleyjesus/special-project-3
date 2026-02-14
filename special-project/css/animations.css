@@ -85,3 +85,9 @@
               color 0.3s ease,
               transform 0.3s ease;
 }
+
+.fade-in-delay {
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}

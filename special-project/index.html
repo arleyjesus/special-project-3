@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>¿Mi San Valentín?</title>
 
-  <!-- Google Font -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- CSS -->
@@ -17,21 +17,49 @@
   <!-- Fondo animado -->
   <div class="hearts-background"></div>
 
+  <!-- Overlay de transición -->
+  <div class="transition-overlay" id="transitionOverlay"></div>
+
   <!-- Contenedor principal -->
   <main class="container center">
-    <h1 class="fade-in">¿Feliz de que tú seas<br><span>mi San Valentín?</span> 💖</h1>
+    
+    <h1 class="fade-in">
+      Feliz San Valentin<br>
+      <span>Corazon</span> 💖
+    </h1>
+
+    <p class="subtitle fade-in-delay">
+      Te quiero Muchito...
+    </p>
 
     <button class="btn-primary pulse" onclick="goToLogin()">
       Sí, quiero ver 💕
     </button>
+
   </main>
 
   <!-- JS -->
   <script>
-    function goToLogin() {
-      window.location.href = 'login.html';
-    }
-  </script>
+  function goToLogin() {
+    const overlay = document.getElementById("transitionOverlay");
+    const button = document.querySelector(".btn-primary");
+
+    // Desactiva múltiples clicks
+    button.disabled = true;
+
+    // Animación del botón
+    button.classList.add("clicked");
+
+    setTimeout(() => {
+      overlay.classList.add("active");
+    }, 300);
+
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 1100);
+  }
+</script>
+
 
 </body>
 </html>
